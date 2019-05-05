@@ -24,8 +24,8 @@ def apply_coupons(cart, coupons)
   # code here
   newCart = {}.merge(cart)
   couponHashtemp = {}
-  for i in 0...coupons.length
-    cart.each do |cartKey, cartValue|
+  cart.each do |cartKey, cartValue|
+    for i in 0...coupons.length
       if coupons[i][:item] == cartKey
         couponHashtemp = {}.merge(cartValue)
         couponHashtemp[:price] = coupons[i][:cost]
