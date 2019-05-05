@@ -36,7 +36,7 @@ def apply_coupons(cart, coupons)
          break
       end
     end
-    if newCart.includes?(newCart["#{coupons[i][:item]} W/COUPON"])
+    if newCart.key?("#{coupons[i][:item]} W/COUPON")
       newCart["#{coupons[i][:item]} W/COUPON"][:count] += 1
     end
   end
