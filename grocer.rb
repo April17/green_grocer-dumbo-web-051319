@@ -57,12 +57,9 @@ end
 
 def checkout(cart, coupons)
   # code here
-  if cart == {}
-    return nil
-  else
-    tempCart = {}
-    tempCart = apply_coupons(cart,coupons)
-    binding.pry
-    return tempCart
-  end
+  cartTemp = consolidate_cart(cart)
+  cartTemp = apply_coupons(cartTemp, coupons)
+  cartTemp = apply_clearance(cartTemp)
+  binding.pry
+  return cartTemp
 end
