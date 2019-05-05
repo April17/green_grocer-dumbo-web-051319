@@ -62,7 +62,7 @@ def checkout(cart, coupons)
   cartTemp = apply_coupons(cartTemp, coupons)
   cartTemp = apply_clearance(cartTemp)
   cartTemp.each do |item, data|
-
+    total += data[:price] * data[:count]
   end
   return total
 end
