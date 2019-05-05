@@ -57,8 +57,12 @@ end
 
 def checkout(cart, coupons)
   # code here
-  tempCart = {}
-  tempCart = apply_coupons(cart,coupons)
-  binding.pry
-  return tempCart
+  if cart == {}
+    return nil
+  else
+    tempCart = {}
+    tempCart = apply_coupons(cart,coupons)
+    binding.pry
+    return tempCart
+  end
 end
