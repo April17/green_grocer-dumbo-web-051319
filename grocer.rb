@@ -57,8 +57,12 @@ end
 
 def checkout(cart, coupons)
   # code here
+  total = 0
   cartTemp = consolidate_cart(cart)
   cartTemp = apply_coupons(cartTemp, coupons)
   cartTemp = apply_clearance(cartTemp)
-  binding.pry
+  cartTemp.each do |item, data|
+
+  end
+  return total
 end
