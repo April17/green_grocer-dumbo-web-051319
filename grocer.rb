@@ -28,8 +28,8 @@ def apply_coupons(cart, coupons)
     cart.each do |cartKey, cartValue|
       if coupons[i][:item] == cartKey
         couponHashtemp = {}.merge(cartValue)
-        couponHashtemp[:price] = coupons[0][:cost]
-        couponHashtemp[:count] = 1
+        couponHashtemp[:price] = coupons[i][:cost]
+        couponHashtemp[:count] = couponHashtemp[:count] /
         newCart[coupons[i][:item]][:count] -= coupons[i][:num]
         newCart["#{coupons[i][:item]} W/COUPON"] = couponHashtemp
       else
