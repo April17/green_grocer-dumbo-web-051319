@@ -64,5 +64,8 @@ def checkout(cart, coupons)
   cartTemp.each do |item, data|
     total += data[:price] * data[:count]
   end
+  if total > 100
+    total *= 0.9
+  end
   return total
 end
