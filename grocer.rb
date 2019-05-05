@@ -35,7 +35,7 @@ def apply_coupons(cart, coupons)
     end
   end
   for i in 0...coupons.length
-    if newCart.key?("#{coupons[i][:item]} W/COUPON") && newCart[coupons[i][:item]][:count] > coupons[i][:num]
+    if newCart.key?("#{coupons[i][:item]} W/COUPON") && newCart[coupons[i][:item]][:count] >= coupons[i][:num]
       newCart[coupons[i][:item]][:count] -= coupons[i][:num]
       newCart["#{coupons[i][:item]} W/COUPON"][:count] += 1
     end
