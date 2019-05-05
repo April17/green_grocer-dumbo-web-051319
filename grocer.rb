@@ -42,6 +42,7 @@ def apply_coupons(cart, coupons)
       newCart["#{coupons[i][:item]} W/COUPON"][:count] += 1
     end
   end
+  binding.pry
   return newCart
 end
 
