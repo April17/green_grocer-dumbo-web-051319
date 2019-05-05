@@ -29,7 +29,7 @@ def apply_coupons(cart, coupons)
       if coupons[i][:item] == cartKey
         couponHashtemp = {}.merge(cartValue)
         couponHashtemp[:price] = coupons[i][:cost]
-        couponHashtemp[:count] = newCart[:count] / coupons[i][:num]
+        couponHashtemp[:count] = 1
         newCart[coupons[i][:item]][:count] -= coupons[i][:num]
         newCart["#{coupons[i][:item]} W/COUPON"] = couponHashtemp
       else
