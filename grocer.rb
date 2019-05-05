@@ -59,6 +59,6 @@ def checkout(cart, coupons)
   # code here
   tempCart = {}
   tempCart = apply_coupons(cart,coupons)
-  tempCart = apply_clearance(tempCart)
   binding.pry
+  return tempCart
 end
