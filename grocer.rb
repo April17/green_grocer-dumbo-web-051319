@@ -30,13 +30,13 @@ def apply_coupons(cart, coupons)
         couponHashtemp = {}.merge(cartValue)
         couponHashtemp[:price] = coupons[i][:cost]
         couponHashtemp[:count] = 0
-        newCart[coupons[i][:item]][:count] -= coupons[i][:num]
         newCart["#{coupons[i][:item]} W/COUPON"] = couponHashtemp
       end
     end
   end
   for i in 0...coupons.length
     if newCart.key?("#{coupons[i][:item]} W/COUPON")
+      newCart[coupons[i][:item]][:count] -= coupons[i][:num]
       newCart["#{coupons[i][:item]} W/COUPON"][:count] += 1
     end
   end
