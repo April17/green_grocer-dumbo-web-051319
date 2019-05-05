@@ -33,8 +33,9 @@ def apply_coupons(cart, coupons)
         newCart[coupons[i][:item]][:count] -= coupons[i][:num]
         newCart["#{coupons[i][:item]} W/COUPON"] = couponHashtemp
       else
-        return newCart
+         break
       end
+
     end
   end
   return newCart
